@@ -1,0 +1,13 @@
+<div *ngIf="countries">
+    <div class="form-group">
+        <ng-container *ngFor="let country of countries" class="col-1-4">
+            <img id="imgFlagCounter" src="{{ country.flag }}">
+            <label id="nameCountry"> country name: {{country.name}} </label><br><br>
+            <label id="capitalCountry"> Capital: {{country.capital}} </label><br><hr>
+            <label id="currenciesNameLabel"> Currency: </label>
+            <a id="currenciesName" *ngFor="let currencies of country.currencies"> {{currencies.name}} [{{currencies.symbol}}]</a><br><hr>
+            <label id="populationCountry"> Population: {{country.population}} </label><br><hr>
+            <label id="areaCountry"> Area: {{country.area}} [&#13218;] </label><br><hr>
+        </ng-container>
+    </div>
+</div>

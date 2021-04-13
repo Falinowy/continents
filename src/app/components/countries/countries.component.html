@@ -1,0 +1,8 @@
+<div class="grid grid-pad">
+    <a *ngFor="let region of regions" class="col-1-4" routerLink="/country/{{ region.name }}">
+        <div class="module continent">
+            <img id="imgFlagRegion" src="{{ region.flag }}">
+            <h4>{{ region.name }}</h4>
+        </div>
+    </a>
+</div>

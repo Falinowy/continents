@@ -1,0 +1,31 @@
+.toolbar {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border: 1px solid black;
+}
+.button {
+  background-color: white;
+  color: black;
+  padding: 19px 34px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: #f17828;
+}
+#aboutMe {
+  float: right;
+}
+#buttonBack {
+  float: left;
+}
+#logoToolbar {
+  max-width: 8%;
+  min-width: 9%;
+}

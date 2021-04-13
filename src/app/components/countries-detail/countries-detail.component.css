@@ -1,0 +1,10 @@
+.form-group {
+  padding: 10%;
+  text-align: left;
+  display: block;
+  font-size: 50px;
+}
+#imgFlagCounter {
+  max-width: 10%;
+  border: 2px solid black;
+}

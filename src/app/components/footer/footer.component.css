@@ -1,0 +1,11 @@
+.footer {
+  clear: both;
+  position: relative;
+  padding: 14px 16px;
+  text-align: center;
+  border: 1px solid black;
+}
+#logoToolbar {
+  max-width: 8%;
+  min-width: 9%;
+}

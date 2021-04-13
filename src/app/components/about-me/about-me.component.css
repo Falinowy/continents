@@ -1,0 +1,39 @@
+.titleAboutMe {
+  padding: 1%;
+  text-align: center;
+  background-color: white;
+  color: #f17828;
+  border: 1px solid #f17828;
+  border-radius: 10px;
+}
+
+.bodyAboutMe {
+  padding: 1%;
+  margin-top: 1%;
+  text-align: center;
+  background-color: white;
+  color: black;
+  border: 2px solid #f17828;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.CloseButton {
+  background-color: white;;
+  color: rgb(46, 44, 44);
+  padding: 19px 34px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.CloseButton:hover {
+  background-color: rgb(250, 76, 23);
+}
+a {
+  color: rgb(46, 44, 44);
+  background-color: transparent;
+  text-decoration: none;
+}
