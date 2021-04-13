@@ -4,6 +4,7 @@
   padding-top: 4%;
   padding-left: 4%;
   padding-bottom: 4%;
+  
 }
 a {
   text-decoration: none;
@@ -32,6 +33,7 @@ a {
 }
 .grid-pad {
   padding: 5% 0;
+  
 }
 #imgFlagRegion {
   max-width: 20%;

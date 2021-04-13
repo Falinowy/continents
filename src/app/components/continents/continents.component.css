@@ -1,9 +1,8 @@
 [class*="col-"] {
   float: left;
   padding-right: 1%;
-  padding-top: 4%;
   padding-left: 4%;
-  padding-bottom: 4%;
+  padding-bottom: 5%;
 }
 a {
   text-decoration: none;
