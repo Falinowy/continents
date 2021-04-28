@@ -1,4 +1,4 @@
-export class  Continents {
+export interface  Continents {
     name: string;
     region: string;
 }

@@ -18,10 +18,10 @@ export class CountriesService {
   }
 
   getRegion(nameRegion: string): Observable<Country> {
-    return this.http.get<Country>(`${this.regionUrl}/${nameRegion}`); 
+    return this.http.get<Country>(`${this.regionUrl}/${nameRegion}`);
   }
-  getCounterDetail(nameCountry: String): Observable<Country> {
-    return this.http.get<Country>(`${this.countryUrl}/${nameCountry}`); 
+  getCounterDetail(nameCountry: string): Observable<Country> {
+    return this.http.get<Country>(`${this.countryUrl}/${nameCountry}`);
   }
 
 }
