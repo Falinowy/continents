@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'gwo-task'`, () => {
+  it(`should have as title 'countries-of-continentals'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('gwo-task');
+    expect(app.title).toEqual('countries-of-continentals');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('gwo-task app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('countries-of-continentals app is running!');
   });
 });

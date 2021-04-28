@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gwo-task": {
+    "countries-of-continentals": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gwo-task",
+            "outputPath": "dist/countries-of-continentals",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gwo-task:build"
+            "browserTarget": "countries-of-continentals:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gwo-task:build:production"
+              "browserTarget": "countries-of-continentals:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gwo-task:build"
+            "browserTarget": "countries-of-continentals:build"
           }
         },
         "test": {
@@ -111,16 +111,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "gwo-task:serve"
+            "devServerTarget": "countries-of-continentals:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gwo-task:serve:production"
+              "devServerTarget": "countries-of-continentals:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "gwo-task"
+  "defaultProject": "countries-of-continentals"
 }

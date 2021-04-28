@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'home', component: ContinentsComponent },
   { path: 'continent/:nameRegion', component: CountriesComponent },
   { path: 'country/:nameCountry', component: CountriesDetailComponent },
+  { path: '**', redirectTo: '/home' },
 
 ];
 
