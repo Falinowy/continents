@@ -8,11 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
   constructor(private location: Location, public dialog: MatDialog) { }
-
-  ngOnInit(): void {
-  }
 
   goBack(): void {
     this.location.back();
