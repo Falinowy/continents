@@ -1,6 +1,6 @@
 # Demo 
 
-- https://countreis-of-continentals.netlify.app/home
+- https://countreis-of-continentals.netlify.app
 
 
 # CountriesOfContinentals
