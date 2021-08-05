@@ -1,7 +1,10 @@
+<div class="header">
+  <p>CONTINENTS</p>
+</div>
 <div class="grid grid-pad">
-  <a *ngFor="let continent of continents " class="col-1-4" routerLink="/continent/{{ continent.region }}">
-    <div class="module continent">
-      <h4>{{ continent.name }}</h4>
+  <a *ngFor="let continent of continents " class="col-1" routerLink="/continent/{{ continent.region }}">
+    <div>
+      <button mat-raised-button color="warn" class="button">{{ continent.name }}</button>
     </div>
   </a>
 </div>

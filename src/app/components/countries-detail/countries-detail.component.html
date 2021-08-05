@@ -1,13 +1,18 @@
 <div *ngIf="countries">
-    <div class="form-group">
-        <ng-container *ngFor="let country of countries" class="col-1-4">
-            <img id="imgFlagCounter" src="{{ country.flag }}">
-            <label id="nameCountry"> country name: {{country.name}} </label><br><br>
-            <label id="capitalCountry"> Capital: {{country.capital}} </label><br><hr>
-            <label id="currenciesNameLabel"> Currency: </label>
+
+        <ng-container *ngFor="let country of countries" class="col-1">
+          <div class="header">
+            <p>{{country.name}}</p>
+          </div>
+          <div class="form-group">
+            <mat-label><img id="imgFlagCounter" src="{{ country.flag }}"></mat-label>
+            <mat-label id="nameCountry"> country name: {{country.name}}</mat-label><br><hr>
+            <mat-label id="capitalCountry"> Capital: {{country.capital}} </mat-label><br><hr>
+            <mat-label id="currenciesNameLabel"> Currency: </mat-label>
             <a id="currenciesName" *ngFor="let currencies of country.currencies"> {{currencies.name}} [{{currencies.symbol}}]</a><br><hr>
-            <label id="populationCountry"> Population: {{country.population}} </label><br><hr>
-            <label id="areaCountry"> Area: {{country.area}} [&#13218;] </label><br><hr>
+            <mat-label id="populationCountry"> Population: {{country.population}} </mat-label><br><hr>
+            <mat-label id="areaCountry"> Area: {{country.area}} [&#13218;] </mat-label><br><hr>
+          </div>
         </ng-container>
     </div>
-  </div>
+

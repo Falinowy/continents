@@ -7,28 +7,28 @@
 a {
   text-decoration: none;
 }
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-.col-1-4 {
-  width: 33%;
-}
-.module {
-  padding: 20px;
+
+.button {
   text-align: center;
   color: rgba(10, 10, 10, 0.904);
-  max-height: 120px;
-  min-width: 120px;
+  min-height: 150px;
+  min-width: 300px;
   background-color: #f17828;
-  border-radius: 2px;
+  border-radius: 8px;
+  font-size: 40px;
 }
-.module:hover {
+.button:hover {
   background-color: rgb(255, 241, 241);
   cursor: pointer;
   color: #000000;
 }
 .grid-pad {
   padding: 5% 0;
+}
+.header {
+  padding-top: 60px;
+  text-align: center;
+  color: #f17828;
+  font-weight: bold;
+  font-size: 100px;
 }

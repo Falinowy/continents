@@ -1,10 +1,8 @@
 [class*="col-"] {
   float: left;
   padding-right: 1%;
-  padding-top: 4%;
   padding-left: 4%;
-  padding-bottom: 4%;
-  
+  padding-bottom: 5%;
 }
 a {
   text-decoration: none;
@@ -14,27 +12,34 @@ a {
 *::before {
   box-sizing: border-box;
 }
-.col-1-4 {
-  width: 33%;
-}
-.module {
-  padding: 20px;
+
+.button {
+  padding: 20px 20px;
   text-align: center;
   color: rgba(10, 10, 10, 0.904);
-  max-height: 140px;
-  min-width: 120px;
+  height: 120px;
+  width: 560px;
   background-color: #f17828;
-  border-radius: 2px;
+  border-radius: 8px;
+  font-size: 20px;
 }
-.module:hover {
+.button:hover {
   background-color: rgb(255, 241, 241);
   cursor: pointer;
   color: #000000;
 }
 .grid-pad {
-  padding: 5% 0;
-  
+  padding-top: 3%;
+  padding-left: 10%;
 }
+
 #imgFlagRegion {
-  max-width: 20%;
+  max-width: 10%;
+}
+.header {
+  padding-top: 60px;
+  text-align: center;
+  color: #f17828;
+  font-weight: bold;
+  font-size: 100px;
 }
