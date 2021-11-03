@@ -2,14 +2,12 @@
 
         <ng-container *ngFor="let country of countries" class="col-1">
           <div class="header">
-            <p>{{country.name}}</p>
+            <p>{{country.name.common}}</p>
           </div>
           <div class="form-group">
-            <mat-label><img id="imgFlagCounter" src="{{ country.flag }}"></mat-label>
-            <mat-label id="nameCountry"> country name: {{country.name}}</mat-label><br><hr>
+            <mat-label><img id="imgFlagCounter" src="{{ country.flags.png }}"></mat-label>
+            <mat-label id="nameCountry"> country name: {{country.name.common}}</mat-label><br><hr>
             <mat-label id="capitalCountry"> Capital: {{country.capital}} </mat-label><br><hr>
-            <mat-label id="currenciesNameLabel"> Currency: </mat-label>
-            <a id="currenciesName" *ngFor="let currencies of country.currencies"> {{currencies.name}} [{{currencies.symbol}}]</a><br><hr>
             <mat-label id="populationCountry"> Population: {{country.population}} </mat-label><br><hr>
             <mat-label id="areaCountry"> Area: {{country.area}} [&#13218;] </mat-label><br><hr>
           </div>
