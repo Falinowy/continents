@@ -9,8 +9,8 @@ import { Country } from '../module/country';
   providedIn: 'root'
 })
 export class CountriesService {
-  regionUrl = 'https://restcountries.eu/rest/v2/region';
-  countryUrl = 'https://restcountries.eu/rest/v2/name';
+  regionUrl = 'https://restcountries.com/v3.1/region';
+  countryUrl = 'https://restcountries.com/v3.1/name';
   constructor(private http: HttpClient) { }
 
   getContinents(): Observable<Continents[]> {

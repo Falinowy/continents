@@ -23,7 +23,9 @@ a {
   color: #000000;
 }
 .grid-pad {
-  padding: 5% 0;
+  padding-top: 3%;
+  padding-left: 10%;
+
 }
 .header {
   padding-top: 60px;
@@ -31,4 +33,15 @@ a {
   color: #f17828;
   font-weight: bold;
   font-size: 100px;
+}
+@media screen and (min-width: 722px) {
+  div.header {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 721px) {
+  div.header {
+    font-size: 40px;
+  }
 }
