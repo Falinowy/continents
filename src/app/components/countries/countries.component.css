@@ -43,3 +43,19 @@ a {
   font-weight: bold;
   font-size: 70px;
 }
+@media screen and (min-width: 1401px) {
+  div.header {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  div.header {
+    font-size: 40px;
+  }
+  .button {
+    height: 60px;
+    width: 280px;
+    font-size: 15px;
+  }
+}

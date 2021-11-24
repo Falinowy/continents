@@ -15,3 +15,17 @@
   font-weight: bold;
   font-size: 70px;
 }
+@media screen and (min-width: 1401px) {
+  div.header {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  div.header {
+    font-size: 30px;
+  }
+  div.form-group {
+    font-size: 20px;
+  }
+}
