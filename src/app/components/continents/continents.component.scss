@@ -45,3 +45,16 @@ a {
     font-size: 40px;
   }
 }
+#new-continents-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 30px;
+  background-color: #f17828;
+}
+[class*="col-"] {
+  float: left;
+  padding-right: 1%;
+  padding-left: 4%;
+  padding-bottom: 5%;
+}

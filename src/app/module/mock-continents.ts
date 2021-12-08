@@ -1,9 +1,9 @@
 import { Continents } from './continents';
 
 export const CONTINENTS: Continents[] = [
-  { name: 'Afryka', region: 'Africa' },
-  { name: 'Ameryka', region: 'Americas' },
-  { name: 'Azja', region: 'Asia' },
-  { name: 'Europa', region: 'Europe' },
-  { name: 'Oceania', region: 'Oceania' },
+  { id: 1, name: 'Afryka', region: 'Africa' },
+  { id: 2, name: 'Ameryka', region: 'Americas' },
+  { id: 3, name: 'Azja', region: 'Asia' },
+  { id: 4, name: 'Europa', region: 'Europe' },
+  { id: 5, name: 'Oceania', region: 'Oceania' },
 ];

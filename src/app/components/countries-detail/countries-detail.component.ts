@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-countries-detail',
   templateUrl: './countries-detail.component.html',
-  styleUrls: ['./countries-detail.component.css']
+  styleUrls: ['./countries-detail.component.scss']
 })
 export class CountriesDetailComponent implements OnInit, OnDestroy {
   countries: Country;

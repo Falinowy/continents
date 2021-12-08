@@ -5,11 +5,11 @@ import { ContinentsComponent } from './components/continents/continents.componen
 import { CountriesDetailComponent } from './components/countries-detail/countries-detail.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: ContinentsComponent },
+  { path: '', redirectTo: 'continents', pathMatch: 'full' },
+  { path: 'continents', component: ContinentsComponent },
   { path: 'continent/:nameRegion', component: CountriesComponent },
   { path: 'country/:nameCountry', component: CountriesDetailComponent },
-  { path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '/continents' },
 
 ];
 

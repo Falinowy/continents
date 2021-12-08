@@ -1,0 +1,20 @@
+<form [formGroup]="continentForm">
+  <div class="row">
+    <div class="col">
+      <h1>
+        NEW CONTINENTS
+      </h1>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Region" name="region" id='region'formControlName="region" required />
+        <label for="region" class="form__label">Region</label>
+      </div>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Name" name="name" id='name'formControlName="name" required />
+        <label for="name" class="form__label">Name</label>
+      </div>
+    </div>
+    <button mat-raised-button id="submit-btn"(click)="onFormSubmit()">
+      Add
+    </button>
+  </div>
+</form>

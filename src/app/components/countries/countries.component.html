@@ -1,10 +1,12 @@
 <div class="header">
   <p>COUNTRIES</p>
 </div>
-<div class="grid grid-pad">
+<div *ngIf="regions">
+  <div class="grid grid-pad">
     <a *ngFor="let region of regions" class="col-1" routerLink="/country/{{ region.name.common }}">
       <div>
             <button mat-raised-button color="warn" class="button"><img id="imgFlagRegion" src="{{ region.flags.png }}"> {{ region.name.common }}</button>
       </div>
     </a>
+  </div>
 </div>
