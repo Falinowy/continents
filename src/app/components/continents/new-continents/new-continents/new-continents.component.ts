@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialog, MatDialogRef  } from '@angular/material/dialog';
 import { Continents } from 'src/app/module/continents';
 import { CountriesService } from 'src/app/service/countries.service';
 
@@ -13,7 +13,7 @@ export class NewContinentsComponent implements OnInit {
   continentForm: FormGroup;
   errorMessage = '';
   continents: Continents| null;
-  constructor(private countriesService: CountriesService, private dialog: MatDialog) { }
+  constructor(private countriesService: CountriesService, private dialog: MatDialog,public dialogRef: MatDialogRef<any>) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -37,7 +37,6 @@ saveContinent(continent: Continents): void {
   if (this.continentForm.valid) {
     if (this.continentForm.dirty) {
       const continents = { ...continent, ...this.continentForm.value };
-        console.log('5');
         this.countriesService.createProduct(continents).subscribe({
           error: err => this.errorMessage = err
         });
