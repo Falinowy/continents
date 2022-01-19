@@ -13,8 +13,9 @@
         <label for="name" class="form__label">Name</label>
       </div>
     </div>
-    <button mat-raised-button id="submit-btn"(click)="onFormSubmit()">
-      Add
-    </button>
+    <mat-dialog-actions align="end">
+      <button mat-button id="cancel-btn"mat-dialog-close>Cancel</button>
+      <button mat-button id="submit-btn"(click)="onFormSubmit()">Install</button>
+    </mat-dialog-actions>
   </div>
 </form>

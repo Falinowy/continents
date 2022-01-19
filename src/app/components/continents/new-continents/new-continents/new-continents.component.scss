@@ -7,17 +7,26 @@
   border-radius: 8px;
   font-size: 25px;
 }
-.button:hover {
-  background-color: rgb(255, 241, 241);
-  cursor: pointer;
-  color: #000000;
+#submit-btn:hover {
+  background-color: #f5c5a5;
+}
+#cancel-btn:hover {
+  background-color: #f5a5a5;
 }
 #submit-btn {
-  left: 250px;
   background-color: #f17828;
+  font-weight: bold;
+}
+#cancel-btn {
+  background-color: #f12828;
+  font-weight: bold;
 }
 h1{
-  color:#000000;
+  border-radius: 8px;
+  background-color: #f17828;
+  padding: 5%;
+  border: 5px solid black;
+  font-weight: bold;
 }
 $orange:#f36100;;
 .form__group {
@@ -29,7 +38,6 @@ $orange:#f36100;;
 
 .form__field {
   font-family: inherit;
-  width: 100%;
   border: 0;
   border-bottom: 2px solid $orange;
   outline: 0;
@@ -77,15 +85,4 @@ $orange:#f36100;;
 /* reset input */
 .form__field{
   &:required,&:invalid { box-shadow:none; }
-}
-/* demo */
-body {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
-  background-color:#222222;
 }

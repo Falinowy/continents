@@ -23,7 +23,6 @@ export class CountriesService {
   }
 
   getRegion(nameRegion: string): Observable<Country> {
-    console.log('1');
     return this.http.get<Country>(`${this.regionUrl}/${nameRegion}`);
   }
   getCounterDetail(nameCountry: string): Observable<Country> {
