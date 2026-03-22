@@ -1,0 +1,64 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="logo-circle" (click)="handleLogoClick()" style="cursor: pointer">
+        <mat-icon>public</mat-icon>
+      </div>
+      <h2>Welcome Back</h2>
+      <p>Please log in to explore the world detail</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container">
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          [id]="FormKey.Username" 
+          [formControlName]="FormKey.Username" 
+          class="custom-input" 
+          placeholder=" "
+          required
+        >
+        <label [for]="FormKey.Username" class="custom-label">Username</label>
+        <mat-icon class="field-icon">person</mat-icon>
+      </div>
+
+      <div class="input-wrapper">
+        <input 
+          [type]="showPassword ? InputType.Text : InputType.Password" 
+          [id]="FormKey.Password" 
+          [formControlName]="FormKey.Password" 
+          class="custom-input" 
+          placeholder=" "
+          required
+        >
+        <label [for]="FormKey.Password" class="custom-label">Password</label>
+        <mat-icon class="field-icon">lock</mat-icon>
+        <button type="button" class="btn-toggle-pass" (click)="togglePassword()">
+          <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </div>
+
+      @if (errorMessage) {
+        <div class="error-box">
+          <mat-icon>error_outline</mat-icon>
+          <span>{{ errorMessage }}</span>
+        </div>
+      }
+
+      <div class="actions">
+        <button 
+          mat-button 
+          type="submit" 
+          class="btn-primary-gradient login-submit"
+          [disabled]="loginForm.invalid"
+        >
+          LOG IN
+        </button>
+      </div>
+    </form>
+
+    <div class="login-footer">
+      <p>Demo accounts: <strong>admin / admin</strong></p>
+    </div>
+  </div>
+</div>

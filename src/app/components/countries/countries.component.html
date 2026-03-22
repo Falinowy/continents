@@ -1,12 +1,56 @@
-<div class="header">
-  <p>COUNTRIES</p>
-</div>
-<div *ngIf="regions">
-  <div class="grid grid-pad">
-    <a *ngFor="let region of regions" class="col-1" routerLink="/country/{{ region.name.common }}">
-      <div>
-            <button mat-raised-button color="warn" class="button"><img id="imgFlagRegion" src="{{ region.flags.png }}"> {{ region.name.common }}</button>
-      </div>
-    </a>
+<div class="countries">
+  <div class="countries-search">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Search country</mat-label>
+      <input
+        matInput
+        placeholder="Type a country name"
+        [formControl]="searchControl"
+      />
+      @if (searchControl.value) {
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="searchControl.reset('')"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </div>
+
+  <div class="app-grid">
+    @if (regions()) {
+      @for (region of regions(); track region.name.common) {
+        <app-discovery-card
+          [label]="region.name.common"
+          [imgUrl]="region.flags.png"
+          [route]="['/' + AppRoute.Country, region.name.common]"
+          [variant]="DiscoveryVariant.Country"
+        ></app-discovery-card>
+      } @empty {
+        @if (searchControl.value) {
+          <div class="no-countries-found">
+            <mat-icon>search_off</mat-icon>
+            <p>No country found matching <span>"{{ searchControl.value }}"</span></p>
+          </div>
+        } @else {
+          @for (i of [1,2,3,4,5,6,7,8]; track i) {
+            <app-skeleton-card [variant]="DiscoveryVariant.Country"></app-skeleton-card>
+          }
+        }
+      }
+    } @else {
+      @for (i of [1,2,3,4,5,6,7,8]; track i) {
+        <app-skeleton-card [variant]="DiscoveryVariant.Country"></app-skeleton-card>
+      }
+    }
+    
+    <app-add-card 
+      label="Add Country" 
+      [variant]="CardVariant.Small"
+      (clicked)="openAddCountryModal()"
+    ></app-add-card>
   </div>
 </div>

@@ -1,61 +1,68 @@
-[class*="col-"] {
-  float: left;
-  padding-right: 1%;
-  padding-left: 4%;
-  padding-bottom: 5%;
-}
-a {
-  text-decoration: none;
-}
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+.countries {
+  width: 100%;
 }
 
-.button {
-  padding: 20px 20px;
+.countries-search {
+  padding: 12px 8px 0;
+  display: flex;
+  justify-content: center;
+
+  .search-field {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.countries .app-grid {
+  grid-auto-rows: auto;
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 10px;
+    padding: 12px 8px 20px;
+  }
+}
+
+.no-countries-found {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
   text-align: center;
-  color: rgba(10, 10, 10, 0.904);
-  height: 120px;
-  width: 560px;
-  background-color: #f17828;
-  border-radius: 8px;
-  font-size: 20px;
-}
-.button:hover {
-  background-color: rgb(255, 241, 241);
-  cursor: pointer;
-  color: #000000;
-}
-.grid-pad {
-  padding-top: 3%;
-  padding-left: 10%;
-}
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin: 20px 0;
+  animation: fadeIn 0.4s ease-out;
 
-#imgFlagRegion {
-  max-width: 10%;
-}
-.header {
-  padding-top: 60px;
-  text-align: center;
-  color: #f17828;
-  font-weight: bold;
-  font-size: 70px;
-}
-@media screen and (min-width: 1401px) {
-  div.header {
-    font-size: 80px;
+  mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    color: var(--primary-orange);
+    opacity: 0.6;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0;
+
+    span {
+      color: var(--primary-orange);
+      font-weight: 700;
+      word-break: break-all;
+    }
   }
 }
 
-@media screen and (max-width: 1400px) {
-  div.header {
-    font-size: 40px;
-  }
-  .button {
-    height: 60px;
-    width: 280px;
-    font-size: 15px;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

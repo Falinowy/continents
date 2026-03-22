@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content [formGroup]="form">
+  <div class="form-container">
+    @for (field of data.fields; track field.key) {
+      <div class="input-wrapper">
+        <input 
+          [type]="field.type || 'text'" 
+          class="custom-input" 
+          placeholder=" " 
+          [formControlName]="field.key" 
+          [id]="field.key" 
+          [required]="field.required"
+        >
+        <label [for]="field.key" class="custom-label">{{ field.label }}</label>
+      </div>
+    }
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="btn-cancel">Cancel</button>
+  <button 
+    mat-button 
+    class="btn-primary-gradient" 
+    (click)="submit()" 
+    [disabled]="!form.valid"
+  >
+    {{ data.submitLabel }}
+  </button>
+</mat-dialog-actions>

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      imports: [AppComponent],
+      providers: [provideRouter([])],
     }).compileComponents();
   });
 
@@ -26,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('countries-of-continentals app is running!');
+    expect(compiled.querySelector('app-toolbar')).toBeTruthy();
   });
 });

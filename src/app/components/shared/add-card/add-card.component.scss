@@ -1,0 +1,115 @@
+.add-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 3px dashed #cbd5e0;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0;
+  font-family: inherit;
+  outline: none;
+
+  // Variants
+  &.large {
+    height: 100%;
+    min-height: 140px;
+
+    .add-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 8px;
+      
+      mat-icon {
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .add-label {
+      font-size: 1rem;
+    }
+  }
+
+  &.small {
+    height: 100px;
+
+    .add-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 4px;
+      
+      mat-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .add-label {
+      font-size: 0.85rem;
+    }
+  }
+
+  &:hover, &:focus {
+    border-color: var(--primary-orange);
+    background: white;
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+
+    .add-icon-wrapper {
+      background: var(--primary-orange);
+      color: white;
+    }
+
+    .add-label {
+      color: var(--primary-orange);
+    }
+  }
+
+  .add-icon-wrapper {
+    background: #edf2f7;
+    color: #718096;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .add-label {
+    font-weight: 700;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: var(--transition);
+  }
+
+  @media screen and (max-width: 768px) {
+    &:hover {
+      transform: none;
+    }
+
+    &.large {
+      .add-icon-wrapper {
+        width: 44px;
+        height: 44px;
+        mat-icon { font-size: 24px; width: 24px; height: 24px; }
+      }
+      .add-label { font-size: 0.9rem; }
+    }
+
+    &.small {
+      .add-icon-wrapper {
+        width: 32px;
+        height: 32px;
+        mat-icon { font-size: 20px; width: 20px; height: 20px; }
+      }
+      .add-label { font-size: 0.75rem; }
+    }
+  }
+}

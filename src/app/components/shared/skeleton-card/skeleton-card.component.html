@@ -1,0 +1,25 @@
+@if (variant === DiscoveryVariant.Detail) {
+  <div class="detail-skeleton-wrapper">
+    <div class="detail-card-skeleton">
+      <div class="detail-header-skeleton shimmer bright-shimmer">
+        <div class="flag-skeleton"></div>
+        <div class="title-skeleton"></div>
+      </div>
+      <div class="detail-body-skeleton">
+        @for (row of [1,2,3,4,5]; track $index) {
+          <div class="skeleton-row shimmer">
+            <div class="skeleton-label"></div>
+            <div class="skeleton-value"></div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="skeleton-item shimmer" [ngClass]="variant">
+    @if (variant === DiscoveryVariant.Country || variant === DiscoveryVariant.Continent) {
+      <div class="skeleton-image"></div>
+    }
+    <div class="skeleton-text"></div>
+  </div>
+}

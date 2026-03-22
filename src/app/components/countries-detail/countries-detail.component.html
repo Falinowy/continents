@@ -1,16 +1,37 @@
-<div *ngIf="countries">
+@if (countries()) {
+  @for (country of countries(); track country.name.common) {
+    <div class="detail-container">
+      <div class="detail-card">
+        <div class="detail-header">
+          <img class="flag-img" [src]="country.flags.png" [alt]="country.name.common">
+          <h2>{{ country.name.common }}</h2>
+        </div>
 
-        <ng-container *ngFor="let country of countries" class="col-1">
-          <div class="header">
-            <p>{{country.name.common}}</p>
+        <div class="detail-body">
+          <div class="info-row">
+            <span class="label">Capital</span>
+            <span class="value">{{ country.capital }}</span>
           </div>
-          <div class="form-group">
-            <mat-label><img id="imgFlagCounter" src="{{ country.flags.png }}"></mat-label>
-            <mat-label id="nameCountry"> country name: {{country.name.common}}</mat-label><br><hr>
-            <mat-label id="capitalCountry"> Capital: {{country.capital}} </mat-label><br><hr>
-            <mat-label id="populationCountry"> Population: {{country.population}} </mat-label><br><hr>
-            <mat-label id="areaCountry"> Area: {{country.area}} [&#13218;] </mat-label><br><hr>
+          <div class="info-row">
+            <span class="label">Population</span>
+            <span class="value">{{ country.population | number }}</span>
           </div>
-        </ng-container>
+          <div class="info-row">
+            <span class="label">Area</span>
+            <span class="value">{{ country.area | number }} km²</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Region</span>
+            <span class="value">{{ country.region }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Subregion</span>
+            <span class="value">{{ country.subregion }}</span>
+          </div>
+        </div>
+      </div>
     </div>
-
+  }
+} @else {
+  <app-skeleton-card [variant]="DiscoveryVariant.Detail"></app-skeleton-card>
+}

@@ -8,16 +8,21 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "emitDecoratorMetadata": false,
+    "moduleResolution": "bundler",
     "importHelpers": true,
-    "target": "es2015",
-    "module": "es2020",
+    "target": "es2022",
+    "module": "esnext",
+    "useDefineForClassFields": false,
     "lib": [
-      "es2018",
+      "esnext",
       "dom"
     ]
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }

@@ -1,0 +1,11 @@
+<button 
+  type="button" 
+  class="add-card" 
+  [ngClass]="variant"
+  (click)="onClick()"
+>
+  <div class="add-icon-wrapper">
+    <mat-icon>add</mat-icon>
+  </div>
+  <span class="add-label">{{ label }}</span>
+</button>

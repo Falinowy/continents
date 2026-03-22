@@ -1,57 +1,73 @@
 import { Injectable } from '@angular/core';
 import { Continents } from '../module/continents';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of, throwError, BehaviorSubject } from 'rxjs';
+import { catchError, tap, map, delay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Country } from '../module/country';
 import { CONTINENTS } from '../module/mock-continents';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountriesService {
-  private regionUrl = 'https://restcountries.com/v3.1/region';
-  private countryUrl = 'https://restcountries.com/v3.1/name';
-  private continentsUrl = 'api/continents';
-  private continents: Continents[];
-  private country: Country;
+  private readonly regionUrl = 'https://restcountries.com/v3.1/region';
+  private readonly countryUrl = 'https://restcountries.com/v3.1/name';
+  
+  private continentsSubject = new BehaviorSubject<Continents[]>(CONTINENTS);
+  public continents$ = this.continentsSubject.asObservable();
+
+  private customCountries: Record<string, Country[]> = {};
+
   constructor(private http: HttpClient) { }
 
   getContinents(): Observable<Continents[]> {
-    return of(CONTINENTS);
+    return this.continents$.pipe(delay(400));
   }
 
-  getRegion(nameRegion: string): Observable<Country> {
-    return this.http.get<Country>(`${this.regionUrl}/${nameRegion}`);
-  }
-  getCounterDetail(nameCountry: string): Observable<Country> {
-    return this.http.get<Country>(`${this.countryUrl}/${nameCountry}`);
-  }
-
-  createProduct(continents: Continents): Observable<Continents> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const newContinents = { ...continents, id: null };
-    return this.http.post<Continents>(this.continentsUrl, newContinents, { headers })
-    //TODO
-      .pipe(
-        tap(data => console.log('createProduct: ' + JSON.stringify(data))),
-        tap(data => {
-          this.continents.push(data);
-        }),
-        catchError(this.handleError)
-      );
+  getRegion(nameRegion: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.regionUrl}/${nameRegion}`).pipe(
+      delay(400),
+      map(apiCountries => {
+        const local = this.customCountries[nameRegion] || [];
+        return [...apiCountries, ...local];
+      }),
+      catchError(() => {
+        return of(this.customCountries[nameRegion] || []).pipe(delay(400));
+      })
+    );
   }
 
-  private handleError(err: any) {
-    let errorMessage: string;
-    if (err.error instanceof ErrorEvent) {
-      errorMessage = `An error occurred: ${err.error.message}`;
-    } else {
-      errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
+  addCountryToRegion(regionName: string, country: Partial<Country>): void {
+    if (!this.customCountries[regionName]) {
+      this.customCountries[regionName] = [];
     }
-    console.error(err);
-    return throwError(errorMessage);
+    this.customCountries[regionName].push(country as Country);
+  }
+  
+  getCountryDetail(nameCountry: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.countryUrl}/${nameCountry}`).pipe(
+      delay(800),
+      catchError(() => {
+        const needle = nameCountry?.toLowerCase();
+        for (const region of Object.keys(this.customCountries)) {
+          const found = this.customCountries[region].find(c => c.name.common?.toLowerCase() === needle);
+          if (found) {
+            return of([found]).pipe(delay(400));
+          }
+        }
+        return throwError(() => new Error('Country not found'));
+      })
+    );
   }
 
+  addContinent(continent: Continents): Observable<Continents> {
+    const newContinent: Continents = { ...continent, id: this.continentsSubject.value.length + 1 };
+    
+    return of(newContinent).pipe(
+      tap(data => {
+        const current = this.continentsSubject.value;
+        this.continentsSubject.next([...current, data]);
+      })
+    );
+  }
 }

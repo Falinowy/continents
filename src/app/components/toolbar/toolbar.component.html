@@ -1,5 +1,30 @@
 <mat-toolbar class="toolbar">
-    <button mat-raised-button color="warn" class="button"(click)="goBack()"><i class="material-icons">arrow_back</i>BACK</button>
-    <span class="fill"></span>
-    <button mat-raised-button color="warn" class="button"(click)="openAboutMe()"><i class="material-icons">assignment_ind</i>ABOUT ME</button>
+  <div class="toolbar-container">
+    <div class="toolbar-left">
+      <button mat-button class="nav-button" (click)="goBack()">
+        <i class="material-icons">arrow_back</i>
+        <span>BACK</span>
+      </button>
+      <button mat-button class="nav-button" (click)="goHome()">
+        <i class="material-icons">home</i>
+        <span>HOME</span>
+      </button>
+    </div>
+
+    <div class="toolbar-center">
+      <h1 class="page-title">{{ title() }}</h1>
+    </div>
+
+    <div class="toolbar-right">
+      <button mat-button class="nav-button" (click)="handleAuth()">
+        <mat-icon>{{ authService.isLoggedIn() ? 'logout' : 'login' }}</mat-icon>
+        <span>{{ authService.isLoggedIn() ? 'LOGOUT' : 'LOGIN' }}</span>
+      </button>
+
+      <button mat-button class="nav-button" (click)="openAboutMe()">
+        <i class="material-icons">person</i>
+        <span>ABOUT ME</span>
+      </button>
+    </div>
+  </div>
 </mat-toolbar>
