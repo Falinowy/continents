@@ -7,6 +7,5 @@
   NODE_VERSION = "22"
   CI = "false"
   NX_NO_CLOUD = "true"
-  # Strength-skip for Netlify's automatic Angular plugin
   NETLIFY_SKIP_ANGULAR_RUNTIME = "true"
   GENERATE_SOURCEMAP = "false"
