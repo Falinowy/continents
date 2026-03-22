@@ -7,4 +7,8 @@
   NODE_VERSION = "22"
   CI = "false"
   NX_NO_CLOUD = "true"
-  NETLIFY_ANGULAR_RUNTIME_DISABLED = "true"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+  [plugins.inputs]
+    packagePath = "."
