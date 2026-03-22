@@ -57,7 +57,7 @@
     min-height: 72px;
     justify-content: flex-start;
     padding: 16px;
-    min-width: 0; /* Critical for truncation in flex */
+    min-width: 0;
 
     .card-image {
       width: 50px;
@@ -82,7 +82,7 @@
 
   @media screen and (max-width: 768px) {
     &:hover {
-      transform: none; /* Disable hover lift on mobile */
+      transform: none;
     }
 
     &.country {

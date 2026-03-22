@@ -15,7 +15,6 @@ export const authGuard: CanActivateFn = (route, state) => {
     return true;
   }
 
-  // Not logged in, redirect to login page with custom modal
   return modalService.showMessage({
     title: 'Access Restricted',
     message: 'Please log in to view country details (admin/admin)',

@@ -18,7 +18,6 @@ export const regionGuard: CanActivateFn = (route, state) => {
         return true;
       }
       
-      // If region doesn't exist, redirect to continents list
       return router.createUrlTree([AppRoute.Continents]);
     })
   );
