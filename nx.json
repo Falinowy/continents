@@ -45,6 +45,5 @@
       "!{projectRoot}/**/*.spec.[jt]s",
       "!{projectRoot}/karma.conf.js"
     ]
-  },
-  "nxCloudId": "685a9aa0c240693ffd522f1c"
+  }
 }
